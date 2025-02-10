@@ -1,12 +1,14 @@
 package com.vanzaga.appcursoveloxestatusalumno;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import androidx.core.text.HtmlCompat;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.HtmlCompat;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,19 +51,31 @@ public class MainActivity extends AppCompatActivity {
             //String resultado = String.valueOf(nota);
 
             // Redondeamos la nota a dos decimales
-            String resultado = String.format("%.2f", nota);
+            /*String resultado = String.format("%.2f", nota);
 
 
             // Mostramos el resultado en el TextView con el mensaje correspondiente
             if (nota >= 5) {
-                text_resultado.setText("Está Aprobado con un " + resultado);
+                text_resultado.setText("Está Aprobado con un " + "<b>" + resultado + "</b>");
             } else {
                 text_resultado.setText("Está Suspendido con un " + resultado);
+            }*/
+
+            // Redondeamos la nota a dos decimales
+            String resultado = String.format("%.2f", nota);
+            String aprobado = "<font color='#00FF00'>Está Aprobado</font> con un " + resultado;
+            String suspendido = "<font color='#FF0000'>Está Suspendido</font>  5con un " + resultado;
+
+            if (nota >= 5) {
+                text_resultado.setText(HtmlCompat.fromHtml(aprobado, HtmlCompat.FROM_HTML_MODE_LEGACY));
+            } else {
+                text_resultado.setText(HtmlCompat.fromHtml(suspendido, HtmlCompat.FROM_HTML_MODE_LEGACY));
             }
+
         } else {
             // Mostramos un mensaje de error si los campos están vacíos
-            text_resultado.setText(@string/mensaje);
+            //text_resultado.setText(Html.fromHtml(getString(R.string.mensaje)));
+            text_resultado.setText(HtmlCompat.fromHtml(getString(R.string.mensaje), HtmlCompat.FROM_HTML_MODE_LEGACY));
         }
     }
 }
-

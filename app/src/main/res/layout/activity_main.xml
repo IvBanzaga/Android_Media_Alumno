@@ -71,14 +71,15 @@
 
     <TextView
         android:id="@+id/text_resultado"
-        android:layout_width="384dp"
+        android:layout_width="256dp"
         android:layout_height="58dp"
         android:layout_marginTop="16dp"
-        android:ems="10"
-        android:maxLines="2"
+        android:breakStrategy="simple"
         android:hint="@string/txt_resultado_String"
-        android:inputType="text"
         android:textAlignment="center"
+        android:textColor="#FF0808"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />

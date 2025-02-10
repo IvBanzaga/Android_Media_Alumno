@@ -6,4 +6,7 @@
     <string name="txt_quimica_String">Química</string>
     <string name="btn_Calcular_Promedio_String">Calcular Promedio</string>
     <string name="txt_resultado_String">Resultado</string>
+
+        <string name="mensaje">Por favor, ingrese todas las notas \n<b>para poder realizar el cálculo.</b>!</string>
+
 </resources>

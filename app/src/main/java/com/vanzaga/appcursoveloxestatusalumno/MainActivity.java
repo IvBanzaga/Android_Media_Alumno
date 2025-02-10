@@ -43,10 +43,14 @@ public class MainActivity extends AppCompatActivity {
             double num3 = Double.parseDouble(quimica);
 
             // Calcular el promedio de las notas
-            double nota = Math.round(num1 + num2 + num3) / 3;
+            double nota = (num1 + num2 + num3) / 3;
 
             // Convertimos la nota a String
-            String resultado = String.valueOf(nota);
+            //String resultado = String.valueOf(nota);
+
+            // Redondeamos la nota a dos decimales
+            String resultado = String.format("%.2f", nota);
+
 
             // Mostramos el resultado en el TextView con el mensaje correspondiente
             if (nota >= 5) {
@@ -56,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             // Mostramos un mensaje de error si los campos están vacíos
-            text_resultado.setText("Por favor, ingrese todas las notas para poder realizar el calculo.");
+            text_resultado.setText(@string/mensaje);
         }
     }
 }
+
